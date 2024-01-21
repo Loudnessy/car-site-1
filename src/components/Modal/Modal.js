@@ -1,5 +1,4 @@
 import { StyledModal, StyledModalBtn, StyledModalButton, StyledModalCarDesc, StyledModalCondList, StyledModalCondListItem, StyledModalCondParagr, StyledModalContainer, StyledModalHeader, StyledModalImage, StyledModalParagraph, StyledModalTag, StyledModalTagsList, StyledModalTagsListItem } from "components/Catalog/Catalog.styled";
-import ReactModal from "react-modal";
 import sprite from '../../images/svg/sprite.svg';
 import { useSelector } from "react-redux";
 export const Modal = ({modalIsOpen, closeModal}) => {

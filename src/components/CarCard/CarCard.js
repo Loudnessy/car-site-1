@@ -10,7 +10,7 @@ import sprite from '../../images/svg/sprite.svg';
 import { useDispatch, useSelector } from 'react-redux';
 import { addFavoriteCar, changeChoosenCar, deleteFavoriteCar } from 'redux/slices/carsSlice';
 export const CarCard = ({ car, modal }) => {
-  const { make, model, year, rentalPrice, img, rentalCompany, address, id, type, fuelConsumption, engineSize } = car;
+  const { make, model, year, rentalPrice, img, id } = car;
   const favorite = useSelector(state => state.cars.favorite)
   const isFavorite = favorite.find(fav => fav === id) ? true : false
   const dispatch = useDispatch();

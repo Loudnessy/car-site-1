@@ -19,7 +19,7 @@ export const getFilteredCars = createAsyncThunk(
   'cars/getFilteredCars',
   async (payload, thunkAPI) => {
     try {
-      const { brand, price, mileage } = payload;
+      const { brand } = payload;
       const responseTotal = await axios.get(`?search=${brand}`);
       const response = await axios.get(`?page=1&limit=12&search=${brand}`);
 console.log(response.data);
@@ -34,7 +34,7 @@ export const loadMore = createAsyncThunk(
   'cars/loadMore',
   async (payload, thunkAPI) => {
     try {
-      const { brand, price, mileage } = payload; 
+      const { brand } = payload; 
             const state = thunkAPI.getState();
       const response = await axios.get(`?page=${state.cars.page + 1}&limit=12&search=${brand}`);
       return response.data

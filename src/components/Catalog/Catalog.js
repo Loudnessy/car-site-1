@@ -1,41 +1,20 @@
 import { useEffect, useState } from 'react';
 import {
   StyledBrandInput,
-  StyledBtn,
-  StyledCard,
-  StyledCardBtn,
-  StyledCardNameDiv,
   StyledContainer,
   StyledForm,
-  StyledImg,
   StyledInputFrom,
   StyledInputTo,
   StyledMileageDiv,
-  StyledModal,
-  StyledModalBtn,
-  StyledModalButton,
-  StyledModalCarDesc,
-  StyledModalCondList,
-  StyledModalCondListItem,
-  StyledModalCondParagr,
-  StyledModalContainer,
-  StyledModalHeader,
-  StyledModalImage,
-  StyledModalParagraph,
-  StyledModalTag,
-  StyledModalTagsList,
-  StyledModalTagsListItem,
   StyledSelect,
-  StyledTags,
   StyledUl,
 } from './Catalog.styled';
-import sprite from '../../images/svg/sprite.svg';
 import ReactModal from 'react-modal';
 import marks from '../../car-marks/makes.json';
-import { Formik, Field, Form } from 'formik';
+import { Formik } from 'formik';
 import { nanoid } from 'nanoid';
 import { useDispatch, useSelector } from 'react-redux';
-import { getCars, getFilteredCars, getTotalFilteredCars, loadMore } from 'api/api';
+import { getFilteredCars, loadMore } from 'api/api';
 import { CarCard } from 'components/CarCard/CarCard';
 import { changeFilter } from 'redux/slices/filterSlice';
 import { changeChoosenCar } from 'redux/slices/carsSlice';
@@ -128,13 +107,3 @@ const Catalog = () => {
 };
 export default Catalog;
 
-// фільрація в вс коді в апішці з респонс датою
-// лоад мор кнопка
-// стилі в модалці
-// стилі в картках
-// стилі для мобілок
-// стилі в планшета
-// хоумпейдж
-// фейворіт
-// додая айді феворіт машин в локалсторедж
-// в фейворіт при монтуванні загружаю всі машини з локал сторадж

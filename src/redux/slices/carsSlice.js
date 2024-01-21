@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getFavoriteCars, getFilteredCars, getTotalFilteredCars, loadMore } from 'api/api';
+import { getFavoriteCars, getFilteredCars, loadMore } from 'api/api';
 const handleRejected = (state, action) => {
   state.isLoading = false;
   state.error = true;

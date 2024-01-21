@@ -1,4 +1,4 @@
-import { StyledBtn, StyledCities, StyledContainer, StyledDescr, StyledDiv, StyledHeader, StyledP, StyledParag, StyledParagraph, StyledUl } from "./Home.styled"
+import { StyledBtn, StyledCities, StyledContainer, StyledHeader, StyledP, StyledParag, StyledParagraph, StyledUl } from "./Home.styled"
 
 const Home = () => {
 return <main>
