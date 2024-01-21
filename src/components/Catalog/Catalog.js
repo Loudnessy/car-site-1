@@ -24,7 +24,6 @@ const Catalog = () => {
   const dispatch = useDispatch();
   const filter = useSelector(state => state.filter);
   const cars = useSelector(state => state.cars.items);
-  const selectedCar = useSelector(state => state.cars.choosenModalCar);
   const total = useSelector(state => state.cars.total);
 
   useEffect(() => {
