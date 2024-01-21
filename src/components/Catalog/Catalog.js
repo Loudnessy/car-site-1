@@ -29,7 +29,7 @@ const Catalog = () => {
   useEffect(() => {
     ReactModal.setAppElement('#main');
     dispatch(getFilteredCars(filter))
-  }, [filter]);
+  }, [filter, dispatch]);
   const closeModal = () => {
     setModalIsOpen(false);
     dispatch(changeChoosenCar(''));
