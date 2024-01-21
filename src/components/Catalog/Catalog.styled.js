@@ -65,6 +65,30 @@ label {
   }  
 }
 `;
+export const StyledBtnLoadMore = styled.button`
+color: #3470FF;
+background-color: transparent;
+font-family: Manrope;
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 1.5; 
+border: none;
+cursor: pointer;
+text-decoration: underline;
+text-align: center;
+&:hover, :focus {
+  color: #0B44CD;
+}
+`
+export const StyledLoadMoreDiv = styled.div`
+display: flex;
+justify-content: center;
+margin-top: 50px;
+  @media screen and (min-width: 1440px){
+  margin-top: 100px;
+  }
+`
 export const StyledDivForm = styled.div`
 display: flex;
 `
@@ -173,6 +197,15 @@ export const StyledInputFrom = styled(Field)`
   }
 `;
 
+export const StyledSection = styled.section`
+padding-bottom: 50px;
+@media screen and (min-width: 768px){
+  padding-bottom: 100px;
+  }
+  @media screen and (min-width: 1440px){
+    padding-bottom: 150px
+  }
+`
 export const StyledInputTo = styled(Field)`
   padding: 14px 93px 14px 24px;
   width: 100%;

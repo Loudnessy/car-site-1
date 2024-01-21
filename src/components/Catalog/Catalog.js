@@ -1,11 +1,14 @@
 import { useEffect, useState } from 'react';
 import {
   StyledBrandInput,
+  StyledBtnLoadMore,
   StyledContainer,
   StyledForm,
   StyledInputFrom,
   StyledInputTo,
+  StyledLoadMoreDiv,
   StyledMileageDiv,
+  StyledSection,
   StyledSelect,
   StyledUl,
 } from './Catalog.styled';
@@ -36,7 +39,7 @@ const Catalog = () => {
   };
   return (
     <main>
-      <section>
+      <StyledSection>
         <StyledContainer id="main">
           <Formik
             initialValues={{ brand: '', price: '', mileage: '' }}
@@ -97,10 +100,10 @@ const Catalog = () => {
               );
             })}
           </StyledUl>
-{total? <button onClick={() => dispatch(loadMore(filter))}>Load more</button> : <div></div>}
+<StyledLoadMoreDiv>{total? <StyledBtnLoadMore onClick={() => dispatch(loadMore(filter))}>Load more</StyledBtnLoadMore> : <div></div>}</StyledLoadMoreDiv>
           <Modal modalIsOpen={modalIsOpen} closeModal={closeModal}/>
         </StyledContainer>
-      </section>
+      </StyledSection>
     </main>
   );
 };
