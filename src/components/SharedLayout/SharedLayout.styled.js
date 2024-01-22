@@ -15,15 +15,14 @@ background-color: #3470FF;
     ul {
     display: flex;
     gap: 28px;
-    justify-content: flex-start;
   } 
 }
 @media screen and (min-width: 1440px) {
-
-
-
-  margin-bottom: 50px;
-  
+  ul {
+    display: flex;
+    gap: 28px;
+    justify-content: flex-start;
+  } 
 }
 `
 export const StyledNavLink = styled(NavLink)`

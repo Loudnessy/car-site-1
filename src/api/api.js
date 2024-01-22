@@ -5,8 +5,10 @@ export const getFavoriteCars = createAsyncThunk(
   'cars/getFavoriteCars',
   async (payload, thunkAPI) => {
     try {
-      const response = await axios.get("");
-      const filteredCars = response.data.filter(car => payload.includes(car.id) )
+      const response = await axios.get('');
+      const filteredCars = response.data.filter(car =>
+        payload.includes(car.id)
+      );
       return filteredCars;
     } catch (error) {
       alert(error.message);
@@ -22,7 +24,6 @@ export const getFilteredCars = createAsyncThunk(
       const { brand } = payload;
       const responseTotal = await axios.get(`?search=${brand}`);
       const response = await axios.get(`?page=1&limit=12&search=${brand}`);
-console.log(response.data);
       return [response.data, responseTotal.data.length - response.data.length];
     } catch (error) {
       alert(error.message);
@@ -34,10 +35,12 @@ export const loadMore = createAsyncThunk(
   'cars/loadMore',
   async (payload, thunkAPI) => {
     try {
-      const { brand } = payload; 
-            const state = thunkAPI.getState();
-      const response = await axios.get(`?page=${state.cars.page + 1}&limit=12&search=${brand}`);
-      return response.data
+      const { brand } = payload;
+      const state = thunkAPI.getState();
+      const response = await axios.get(
+        `?page=${state.cars.page + 1}&limit=12&search=${brand}`
+      );
+      return response.data;
     } catch (error) {
       alert(error.message);
       return thunkAPI.rejectWithValue(error.message);

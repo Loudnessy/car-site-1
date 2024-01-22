@@ -13,7 +13,7 @@ const slice = createSlice({
     page: 1,
     total: 0,
     choosenModalCar: null,
-    favorite: []
+    favorite: [],
   },
   extraReducers: {
     [getFavoriteCars.fulfilled](state, action) {
@@ -26,13 +26,12 @@ const slice = createSlice({
     },
     [getFavoriteCars.rejected]: handleRejected,
     [getFilteredCars.fulfilled](state, action) {
-      const [data, total] = action.payload
-      console.log(data);
+      const [data, total] = action.payload;
       state.items = data;
       state.total = total;
       state.error = false;
       state.isLoading = false;
-      state.page = 1
+      state.page = 1;
     },
     [getFilteredCars.pending](state, action) {
       state.isLoading = true;
@@ -44,22 +43,22 @@ const slice = createSlice({
       state.total = state.total - action.payload.length;
       state.error = false;
       state.isLoading = false;
-      state.page += 1
+      state.page += 1;
     },
     [loadMore.pending](state, action) {
       state.isLoading = true;
     },
     [loadMore.rejected]: handleRejected,
 
-  //   [getTotalFilteredCars.fulfilled](state, action) {
-  //     state.total = action.payload;
-  //     state.error = false;
-  //     state.isLoading = false;
-  //   },
-  //   [getTotalFilteredCars.pending](state, action) {
-  //     state.isLoading = true;
-  //   },
-  //   [getTotalFilteredCars.rejected]: handleRejected,
+    //   [getTotalFilteredCars.fulfilled](state, action) {
+    //     state.total = action.payload;
+    //     state.error = false;
+    //     state.isLoading = false;
+    //   },
+    //   [getTotalFilteredCars.pending](state, action) {
+    //     state.isLoading = true;
+    //   },
+    //   [getTotalFilteredCars.rejected]: handleRejected,
   },
   reducers: {
     changeChoosenCar(state, action) {
@@ -68,14 +67,15 @@ const slice = createSlice({
       );
       state.choosenModalCar = finded || null;
     },
-    addFavoriteCar(state, action){
-      state.favorite.push(action.payload)
+    addFavoriteCar(state, action) {
+      state.favorite.push(action.payload);
     },
-    deleteFavoriteCar(state, action){
+    deleteFavoriteCar(state, action) {
       state.favorite = state.favorite.filter(fav => fav !== action.payload);
-    }
+    },
   },
 });
 
 export const carsReducer = slice.reducer;
-export const { changeChoosenCar, addFavoriteCar, deleteFavoriteCar } = slice.actions;
+export const { changeChoosenCar, addFavoriteCar, deleteFavoriteCar } =
+  slice.actions;
