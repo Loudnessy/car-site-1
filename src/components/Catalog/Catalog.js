@@ -102,20 +102,15 @@ const Catalog = () => {
                         }}
                       >
                         {marks.map(mark => {
-                          if (props.values.brand === '') {
-                            return <li key={nanoid()}>{mark}</li>;
-                          } else if (
-                            !mark
-                              .toUpperCase()
-                              .includes(props.values.brand.toUpperCase())
-                          ) {
-                            return null;
-                          } else if (
+                          if (
+                            props.values.brand === '' ||
                             mark
                               .toUpperCase()
                               .includes(props.values.brand.toUpperCase())
                           ) {
                             return <li key={nanoid()}>{mark}</li>;
+                          } else {
+                            return null;
                           }
                         })}
                       </StyledBrandsList>
@@ -144,20 +139,17 @@ const Catalog = () => {
                         }}
                       >
                         {carRentPrices.map(price => {
-                          if (props.values.price === '') {
+                          if (
+                            props.values.price === '' ||
+                            price.includes(props.values.price)
+                          ) {
                             return (
-                              <li name={price} key={nanoid()}>
+                              <li key={nanoid()} name={price}>
                                 {price}
                               </li>
                             );
-                          } else if (!price.includes(props.values.price)) {
+                          } else {
                             return null;
-                          } else if (price.includes(props.values.price)) {
-                            return (
-                              <li name={price} key={nanoid()}>
-                                {price}
-                              </li>
-                            );
                           }
                         })}
                       </StyledPriceList>
